@@ -20,7 +20,7 @@ body{
 	padding-right: 5px;
 	border: 1px solid #5D5D5D;
 	margin: 20px;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-family: monospace, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	font-family: fantasy;
 	font-size: 30px;
 }
