@@ -62,3 +62,17 @@ header {
 #srch input[type="search"]:placeholder-shown {
   font-size: 1.4rem;
 }
+
+@media only screen and (max-width: 650px) {
+  #title {
+    font-size: 3rem;
+  }
+
+  #datetime {
+    font-size: 1.5rem;
+  }
+
+  #srch {
+    margin-top: 50px;
+  }
+}
