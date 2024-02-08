@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="font-family: Roboto, Arial, sans-serif;" lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Search</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="scirpt.js"></script>
+  <title>Home Page</title>
 </head>
-	<body>
 
-		<div id="hd">SEARCH</div>
+<body>
+  <header>
+    <div id="ttl">Home</div>
+    <div id="dt"></div>
+  </header>
+  <div id="srch">
+    <div>
+      <form id="ggl" action="https://www.google.com/search">
+        <input autofocus name="q" placeholder="google" type="search">
+      </form>
+    </div>
+    <div>
+      <form id="yt" action="https://www.youtube.com/results">
+        <input name="search_query" placeholder="youtube" type="search">
+      </form>
+    </div>
+    <div>
+      <form id="dck" action="https://www.duckduckgo.com/">
+        <input name="q" placeholder="duck" type="search">
+      </form>
+    </div>
+  </div>
+</body>
 
-		<div id="srch">
-
-			<form action="https://www.google.com/search">
-				<input id="ggl" autofocus name="q" placeholder="google" required type="search">
-			</form>
-			<br>
-
-			<form action="https://www.youtube.com/results">
-				<input id="yt" name="search_query" placeholder="youtube" required type="search">
-			</form>
-			<br>
-
-			<form action="https://www.duckduckgo.com/">
-				<input id="dck" name="q" placeholder="duck" required type="search">
-			</form>
-			<br>
-
-		</div>
-
-	</body>
 </html>
