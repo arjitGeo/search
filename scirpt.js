@@ -29,9 +29,7 @@ function getDate(date) {
 	})
 }
 
-const ggl = document.getElementById('ggl');
-
-ggl.addEventListener('submit', function (e) {
+document.getElementById('ggl').addEventListener('submit', function (e) {
 	e.preventDefault();
 	if (new FormData(this).get("q")) {
 		this.submit();
@@ -40,11 +38,8 @@ ggl.addEventListener('submit', function (e) {
 	}
 });
 
-const yt = document.getElementById('yt');
-
-yt.addEventListener('submit', function (e) {
+document.getElementById('yt').addEventListener('submit', function (e) {
 	e.preventDefault();
-
 	if (new FormData(this).get("search_query")) {
 		this.submit();
 	} else {
@@ -52,9 +47,7 @@ yt.addEventListener('submit', function (e) {
 	}
 });
 
-const dck = document.getElementById('dck');
-
-dck.addEventListener('submit', function (e) {
+document.getElementById('dck').addEventListener('submit', function (e) {
 	e.preventDefault();
 	if (new FormData(this).get("q")) {
 		this.submit();
