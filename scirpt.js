@@ -39,7 +39,7 @@ ggl.addEventListener('submit', function (e) {
 		return;
 	}
 
-	a.href = "https://google.com"
+	a.setAttribute("href", "https://google.com");
 	a.click();
 })
 
@@ -54,7 +54,7 @@ yt.addEventListener('submit', function (e) {
 	}
 	console.log("log2");
 
-	a.href = "https://youtube.com"
+	a.setAttribute("href", "https://youtube.com");
 	a.click();
 })
 
@@ -66,6 +66,6 @@ dck.addEventListener('submit', function (e) {
 		return;
 	}
 
-	a.href = "https://duckduckgo.com"
+	a.setAttribute("href", "https://duckduckgo.com");
 	a.click();
 })
