@@ -29,43 +29,36 @@ function getDate(date) {
 	})
 }
 
-const a = document.createElement('a');
-
 const ggl = document.getElementById('ggl');
+
 ggl.addEventListener('submit', function (e) {
 	e.preventDefault();
 	if (new FormData(this).get("q")) {
 		this.submit();
-		return;
+	} else {
+		window.location.href = "https://google.com";
 	}
-
-	a.setAttribute("href", "https://google.com");
-	a.click();
-})
+});
 
 const yt = document.getElementById('yt');
+
 yt.addEventListener('submit', function (e) {
 	e.preventDefault();
 
 	if (new FormData(this).get("search_query")) {
-		console.log("log");
 		this.submit();
-		return;
+	} else {
+		window.location.href = "https://youtube.com";
 	}
-	console.log("log2");
-
-	a.setAttribute("href", "https://youtube.com");
-	a.click();
-})
+});
 
 const dck = document.getElementById('dck');
+
 dck.addEventListener('submit', function (e) {
 	e.preventDefault();
 	if (new FormData(this).get("q")) {
 		this.submit();
-		return;
+	} else {
+		window.location.href = "https://duckduckgo.com";
 	}
-
-	a.setAttribute("href", "https://duckduckgo.com");
-	a.click();
-})
+});
