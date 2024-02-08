@@ -1,32 +1,32 @@
 const timeElement = document.getElementById("time");
 const dateElement = document.getElementById("date");
-updateUI(timeElement, dateElement);
-setInterval(() => {
-	updateUI(timeElement, dateElement);
-}, 60000);
 
-function getKolkataDateTime() {
+updateDateTime();
+
+setInterval(updateDateTime, 60000);
+
+function updateDateTime() {
 	const currentdate = new Date();
-	return [
-		currentdate.toLocaleTimeString("en-US", {
-			timeZone: "Asia/Kolkata",
-			hour: '2-digit',
-			minute: '2-digit',
-			hour12: false
-		}),
-		currentdate.toLocaleDateString("en-US", {
-			timeZone: "Asia/Kolkata",
-			year: 'numeric',
-			month: '2-digit',
-			day: '2-digit'
-		})
-	]
+	timeElement.textContent = getTime(currentdate);
+	dateElement.textContent = getDate(currentdate);
 }
 
-function updateUI(timeElement, dateElement) {
-	const [time, date] = getKolkataDateTime();
-	timeElement.textContent = time;
-	dateElement.textContent = date;
+function getTime(date) {
+	return date.toLocaleTimeString("en-GB", {
+		timeZone: "Asia/Kolkata",
+		hour: '2-digit',
+		minute: '2-digit',
+		hour12: false
+	})
+}
+
+function getDate(date) {
+	return date.toLocaleDateString("en-GB", {
+		timeZone: "Asia/Kolkata",
+		day: '2-digit',
+		month: '2-digit',
+		year: 'numeric'
+	})
 }
 
 const a = document.createElement('a');
