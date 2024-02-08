@@ -1,50 +1,56 @@
-body{
-	color: #5D5D5D; 
-	background-color: #2D2D2D;
+*,
+*::before,
+*::after {
+  min-width: 0;
+  box-sizing: border-box;
+  overscroll-behavior: none;
 }
 
-/*@media(max-width: 1000px){
-	body{
-		background-color: #2D2D2D;
-	}
-}*/
-
-#srch{
-	text-align: center; 
-	margin-top: 20px;
+body {
+  color: #2d2d2d;
+  background-color: #5d5d5d;
 }
 
-#hd{
-	text-align: center;
-	border: 1px solid #5D5D5D;
-	height: 35px;
-	position: relative;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 30px;
-	margin-left: 5%;
-	margin-right: 5%;
+header {
+  font-size: 2.5rem;
+  font-weight: 550;
+  margin: 1px;
 }
 
-#hd:hover{
-	font-style: italic;
+#ttl {
+  margin-left: 15vw;
+  display: inline;
+}
+/* I know how to use flex box and classes */
+#dt {
+  margin-right: 15vw;
+  display: inline;
+  float: right;
 }
 
-input[type=search]{
-	width: 80%;
-	height: 40px;
-	font-size: 18px;
-	border-radius: 20px;
-	padding: 10px;
+#srch {
+  margin-top: 100px;
+  text-align: center;
+  align-items: center;
 }
 
-#ggl{
-	border: 2px solid #3cba54;
+#srch div {
+  margin: 10px;
 }
 
-#yt{
-	border: 2px solid #FF0000;
+#srch input[type="search"] {
+  min-width: 80vw;
+  height: 50px;
+  padding: 0.5%;
+  font-size: 1.5rem;
+  border: none;
 }
 
-#dck{
-	border: 2px solid #E37151;
+#srch input[type="search"]:focus {
+  outline: none;
+  background: #add8e6;
+}
+
+#srch input[type="search"]:placeholder-shown {
+  font-size: 1.4rem;
 }
