@@ -24,7 +24,7 @@ ggl.addEventListener('submit', function (e) {
 })
 
 const yt = document.getElementById('yt');
-ggl.addEventListener('submit', function (e) {
+yt.addEventListener('submit', function (e) {
 	e.preventDefault();
 	if (new FormData(this).get("search_query")) {
 		this.submit();
@@ -36,7 +36,7 @@ ggl.addEventListener('submit', function (e) {
 })
 
 const dck = document.getElementById('dck');
-ggl.addEventListener('submit', function (e) {
+dck.addEventListener('submit', function (e) {
 	e.preventDefault();
 	if (new FormData(this).get("q")) {
 		this.submit();
