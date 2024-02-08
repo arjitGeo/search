@@ -12,19 +12,26 @@ body {
 }
 
 header {
-  font-size: 2.5rem;
   font-weight: 550;
   margin: 1px;
+  max-height: 3vh;
+  user-select: none;
 }
 
-#ttl {
+#title {
+  font-size: 5rem;
   margin-left: 15vw;
   display: inline;
 }
 /* I know how to use flex box and classes */
-#dt {
+#datetime {
+  font-size: 2.5rem;
   margin-right: 15vw;
   display: inline;
+  float: right;
+}
+
+#time {
   float: right;
 }
 
@@ -44,11 +51,12 @@ header {
   padding: 0.5%;
   font-size: 1.5rem;
   border: none;
+  color: #1d1d1d;
 }
 
 #srch input[type="search"]:focus {
   outline: none;
-  background: #add8e6;
+  background: #d3d3d3;
 }
 
 #srch input[type="search"]:placeholder-shown {
