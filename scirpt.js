@@ -1,14 +1,34 @@
-const dt = document.getElementById("dt");
-dt.textContent = getKolkataTime();
+const timeElement = document.getElementById("time");
+const dateElement = document.getElementById("date");
+updateUI(timeElement, dateElement);
 setInterval(() => {
-	dt.textContent = getKolkataTime();
-}, 1000);
+	updateUI(timeElement, dateElement);
+}, 60000);
 
-function getKolkataTime() {
-	const date = new Date(Date.now());
-	const kolkataTime = date.toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
-	return kolkataTime;
+function getKolkataDateTime() {
+	const currentdate = new Date();
+	return [
+		currentdate.toLocaleTimeString("en-US", {
+			timeZone: "Asia/Kolkata",
+			hour: '2-digit',
+			minute: '2-digit',
+			hour12: false
+		}),
+		currentdate.toLocaleDateString("en-US", {
+			timeZone: "Asia/Kolkata",
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit'
+		})
+	]
 }
+
+function updateUI(timeElement, dateElement) {
+	const [time, date] = getKolkataDateTime();
+	timeElement.textContent = time;
+	dateElement.textContent = date;
+}
+
 const a = document.createElement('a');
 
 const ggl = document.getElementById('ggl');
@@ -26,10 +46,13 @@ ggl.addEventListener('submit', function (e) {
 const yt = document.getElementById('yt');
 yt.addEventListener('submit', function (e) {
 	e.preventDefault();
+
 	if (new FormData(this).get("search_query")) {
+		console.log("log");
 		this.submit();
 		return;
 	}
+	console.log("log2");
 
 	a.href = "https://youtube.com"
 	a.click();
