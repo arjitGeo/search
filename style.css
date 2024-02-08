@@ -51,13 +51,17 @@ header {
   padding: 0.5%;
   font-size: 1.5rem;
   border: none;
-  background-color: #d3d3d3;
+  background-color: #adadad;
   color: #1d1d1d;
 }
 
 #srch input[type="search"]:focus {
   outline: none;
   background-color: #fff;
+}
+
+#srch input[type="search"]::selection {
+  background-color: #adadad;
 }
 
 #srch input[type="search"]:placeholder-shown {
