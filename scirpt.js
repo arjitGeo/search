@@ -1,15 +1,27 @@
 const timeElement = document.getElementById("time");
 const dateElement = document.getElementById("date");
 
-updateDateTime();
+const currentdatetime = new Date();
+timeElement.textContent = getTime(currentdatetime);
+dateElement.textContent = getDate(currentdatetime);
 
-setInterval(updateDateTime, 60000);
+setInterval(() => {
+	const currentdatetime = new Date();
+	const time = getTime(currentdatetime);
+	timeElement.textContent = time;
+	if (
+		time[0] === '0' &&
+		time[1] === '0' &&
+		time[3] === '0' &&
+		time[4] === '0'
+	) {
+		dateElement.textContent = getDate(currentdatetime);
+	}
+}, 60000);
 
-function updateDateTime() {
-	const currentdate = new Date();
-	timeElement.textContent = getTime(currentdate);
-	dateElement.textContent = getDate(currentdate);
-}
+handleFormSubmit('ggl', 'https://google.com');
+handleFormSubmit('yt', 'https://youtube.com');
+handleFormSubmit('dck', 'https://duckduckgo.com');
 
 function getTime(date) {
 	return date.toLocaleTimeString("en-GB", {
@@ -29,29 +41,11 @@ function getDate(date) {
 	})
 }
 
-document.getElementById('ggl').addEventListener('submit', function (e) {
-	e.preventDefault();
-	if (new FormData(this).get("q")) {
-		this.submit();
-	} else {
-		window.location.href = "https://google.com";
-	}
-});
-
-document.getElementById('yt').addEventListener('submit', function (e) {
-	e.preventDefault();
-	if (new FormData(this).get("search_query")) {
-		this.submit();
-	} else {
-		window.location.href = "https://youtube.com";
-	}
-});
-
-document.getElementById('dck').addEventListener('submit', function (e) {
-	e.preventDefault();
-	if (new FormData(this).get("q")) {
-		this.submit();
-	} else {
-		window.location.href = "https://duckduckgo.com";
-	}
-});
+function handleFormSubmit(formId, endpoint) {
+	document.getElementById(formId).addEventListener('submit', function (e) {
+		e.preventDefault();
+		this.getElementsByTagName('input')[0].value
+			? this.submit()
+			: window.location.href = endpoint;
+	});
+}
